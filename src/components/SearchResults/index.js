@@ -1,14 +1,14 @@
 import React, { useContext } from "react";
-import ArticleContext from "../../utils/ArticleContext";
+import EmployeeContext from "../../utils/EmployeeContext";
 import "./style.css";
 
 function SearchResults() {
-  const {title, url} = useContext(ArticleContext);
+  const {employees, searchTerm} = useContext(EmployeeContext);
   return (
     <ul className="list-group search-results">
       <li className="list-group-item">
-        <h2>{title}</h2>
-        <a href={url}>{url}</a>
+        <h2>{employees.name}</h2>
+        <a href={searchTerm}>{searchTerm}</a>
       </li>
     </ul>
   );
